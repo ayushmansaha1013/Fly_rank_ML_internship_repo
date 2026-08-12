@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayushman Saha | Search Intelligence & ML Portfolio</title>
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0F172A',
+              bg: '#F8FAFC',
+              accent: '#2563EB',
+              muted: '#64748B'
+            }
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-bg text-brand-dark font-body antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Navigation -->
+  <header class="border-b border-slate-200 py-4 px-6 md:px-12 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <a href="#" class="font-heading text-xl font-bold tracking-tight text-brand-dark hover:text-brand-accent transition-colors">
+        Ayushman Saha
+      </a>
+      <nav class="flex space-x-6 text-sm font-medium text-brand-muted">
+        <a href="#case-study" class="hover:text-brand-dark transition-colors">Case Study</a>
+        <a href="#proof" class="hover:text-brand-dark transition-colors">Repo & Proof</a>
+        <a href="#contact" class="hover:text-brand-dark transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 md:px-12 py-16 space-y-24">
+
+    <!-- Hero Section -->
+    <section class="text-left space-y-6">
+      <div class="inline-block px-3 py-1 bg-blue-50 border border-blue-200 text-brand-accent text-xs font-semibold rounded-full uppercase tracking-wider">
+        FlyRank AI ML Internship · Week 4
+      </div>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
+        Ayushman Saha
+      </h1>
+      <p class="text-lg md:text-xl text-brand-muted max-w-2xl font-normal leading-relaxed">
+        I build end-to-end Search Intelligence pipelines that transform raw data into production-ready ML contracts.
+      </p>
+      <div class="pt-2 flex flex-wrap gap-4">
+        <a href="#case-study" class="bg-brand-accent hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg text-sm transition-colors shadow-sm">
+          Explore Data Contract Case Study
+        </a>
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo" target="_blank" class="border border-slate-300 hover:border-slate-400 bg-white text-brand-dark font-medium px-6 py-3 rounded-lg text-sm transition-colors shadow-sm">
+          View GitHub Repo
+        </a>
+      </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="case-study" class="space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-dark">
+          Search Intelligence Data Contract
+        </h2>
+        <p class="text-brand-muted text-sm mt-1">
+          Unit Analysis, Parquet Ingestion & DuckDB Validation
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-4">
+          <p class="text-brand-dark leading-relaxed">
+            A production pipeline relies on explicit contracts. This case study demonstrates how DuckDB and Parquet partitioned daily files are queried to verify schema consistency, total grain counts, and zero-duplicate integrity.
+          </p>
+          <ul class="space-y-2 text-sm text-brand-muted list-disc list-inside">
+            <li><strong>Engine:</strong> DuckDB with SQL extensions</li>
+            <li><strong>Data Window:</strong> Target March 2026 panel dataset</li>
+            <li><strong>Integrity Checks:</strong> Duplicate hash key checks, null value counts, and explicit column types.</li>
+          </ul>
+        </div>
+        <div class="bg-slate-900 text-slate-100 p-4 rounded-xl border border-slate-800 font-mono text-xs overflow-x-auto shadow-inner">
+          <div class="text-slate-400 border-b border-slate-800 pb-2 mb-3">w03_data_contract.py</div>
+          <pre><code><span class="text-blue-400">import</span> duckdb
+
+con = duckdb.connect()
+con.execute(<span class="text-green-300">"SET http_headers = [{'key': 'Authorization', 'value': 'Bearer ' + token}];"</span>)
+
+<span class="text-slate-500"># Verify zero duplication on grain</span>
+res = con.execute(<span class="text-green-300">"""
+    SELECT client_hash_id, report_date, COUNT(*) 
+    FROM read_parquet(DATA_PATH)
+    GROUP BY client_hash_id, report_date
+    HAVING COUNT(*) > 1
+"""</span>).fetchall()
+
+<span class="text-blue-400">print</span>(<span class="text-green-300">f"Grain Duplicate Count: {len(res)}"</span>)</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof & Artifacts -->
+    <section id="proof" class="space-y-6">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="font-heading text-2xl font-bold text-brand-dark">Proof Vault</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo" target="_blank" class="p-6 bg-white border border-slate-200 rounded-xl hover:border-brand-accent transition-colors block">
+          <h3 class="font-heading font-semibold text-lg text-brand-dark mb-1">GitHub Repository</h3>
+          <p class="text-sm text-brand-muted">Explore public code, workflow definitions, and notebook iterations.</p>
+        </a>
+        <div class="p-6 bg-white border border-slate-200 rounded-xl">
+          <h3 class="font-heading font-semibold text-lg text-brand-dark mb-1">Data Contract Execution</h3>
+          <p class="text-sm text-brand-muted">Verified DuckDB execution logs with zero duplication error state.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="bg-slate-900 text-white rounded-2xl p-8 md:p-12 text-center space-y-6">
+      <h2 class="font-heading text-3xl font-bold">Let's Connect</h2>
+      <p class="text-slate-300 max-w-xl mx-auto text-sm leading-relaxed">
+        Looking to build scalable ML architectures and Search Intelligence systems? Reach out to schedule a technical chat.
+      </p>
+      <div>
+        <a href="mailto:ayushmansaha1013@gmail.com" class="inline-block bg-brand-accent hover:bg-blue-600 text-white font-medium px-8 py-3 rounded-lg text-sm transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 py-6 text-center text-xs text-brand-muted bg-white">
+    <p>© 2026 Ayushman Saha. Built for FlyRank AI Internship.</p>
+  </footer>
+
+</body>
+</html>
