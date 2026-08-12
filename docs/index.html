@@ -1,14 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ayushman Saha | Search Intelligence & ML</title>
-  <style>
-    body { font-family: sans-serif; background: #F8FAFC; color: #0F172A; padding: 2rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayushman Saha — Search Intelligence Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0F172A;
+    --background: #F8FAFC;
+    --accent: #2563EB;
+    --muted: #64748B;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--primary);
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero p.claim {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.18s ease;
+    display: inline-block;
+    border: 1.5px solid transparent;
+  }
+
+  .btn-primary {
+    background-color: var(--accent);
+    color: #FFFFFF;
+  }
+
+  .btn-primary:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1.5px solid #CBD5E1;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--primary);
+    background-color: #F1F5F9;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 480px) {
+    .cta-group {
+      flex-direction: column;
+      width: 100%;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
 </head>
 <body>
+
+<section class="hero">
+  <span class="hero-eyebrow">Search Intelligence Engineer</span>
   <h1>Ayushman Saha</h1>
-  <p>Search Intelligence & ML Engineering Portfolio — Deployment Live.</p>
+  <p class="claim">I build end-to-end Search Intelligence pipelines that transform raw data into production-ready ML contracts.</p>
+  <div class="cta-group">
+    <a href="#case-study" class="btn btn-primary">Explore Search Intelligence Case Study</a>
+    <a href="https://github.com/your-username/your-repo" class="btn btn-secondary">View GitHub Repo</a>
+  </div>
+</section>
+
 </body>
 </html>
