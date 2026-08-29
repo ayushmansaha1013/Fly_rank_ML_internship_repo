@@ -142,6 +142,67 @@ build on — and the `skills/` folder here is the instruction library for your A
 4. That's your submission repo — share its **github.com/you/your-repo** URL with Assignment 1
    (never a colab.research.google.com or drive.google.com link).
 
+
+   # Search-Intel-Scout
+
+> **Autonomous Search Intelligence Research & Data Contract Validation Agent**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![DuckDB](https://img.shields.io/badge/DuckDB-1.1.0-orange.svg)](https://duckdb.org/)
+[![MCP Compliant](https://img.shields.io/badge/MCP-Filesystem%20%7C%20Shell-green.svg)](https://modelcontextprotocol.io/)
+
+---
+
+## 1. What It Does & Who It's For
+
+`Search-Intel-Scout` is an autonomous AI agent built for **Search Intelligence and Machine Learning Engineers**. 
+
+* **The Problem:** ML engineers spend hours manually opening dataset notebooks, writing SQL queries to check for duplicate data keys, verifying row counts, and drafting documentation.
+* **The Solution:** The agent connects directly to your local file system and DuckDB database. You type a plain-English request, and the agent inspects the code, runs the SQL verification queries live, and writes a published Data Contract file to disk.
+
+---
+
+## 2. AI Transparency Statement (Framework Compliance)
+
+> **How this was built:** This agent was built using **Claude 3.5 Sonnet** as an AI pair-programmer. AI generated the initial boilerplate code for the Model Context Protocol (MCP) server bindings and regex string parsing. **What I manually verified and wrote myself:** I personally wrote the DuckDB SQL verification logic, debugged catalog exception errors when handling Parquet files, configured local file permissions, and created the evaluation test suite.
+
+---
+
+## 3. Architecture Diagram
+
+```text
++-------------------------------------------------------------------+
+|                           USER PROMPT                             |
+|  "Inspect March 2026 panel, verify grain duplicates, publish doc" |
++-------------------------------------------------------------------+
+                                  |
+                                  v
++-------------------------------------------------------------------+
+|                        CLAUDE AGENT LOOP                          |
+|  1. Formulates plan & selects tool                                |
+|  2. Intercepts runtime errors & adapts queries                    |
++-------------------------------------------------------------------+
+       /                                                     \
+      / Tool Call: filesystem.read_file                       \ Tool Call: terminal.execute
+     v                                                         v
++-----------------------------------+             +-----------------------------------+
+|   MCP FILESYSTEM SERVER           |             |   LOCAL DUCKDB SHELL RUNNER       |
+|   `@modelcontextprotocol/server-` |             |   Executes: `SELECT COUNT(*)`     |
+|   `filesystem`                    |             |   `read_parquet('march_2026')`    |
++-----------------------------------+             +-----------------------------------+
+     |                                                         |
+     v                                                         v
+ Reads `./notebooks/w03_contract.py`             Returns: `DUPLICATES_FOUND: 0`
+     \                                                         /
+      \_________________________   ___________________________/
+                                \ /
+                                 v
++-------------------------------------------------------------------+
+|                     FINAL AUTONOMOUS OUTPUT                       |
+|        File Created: `./docs/DATA_CONTRACT_V2.md`                 |
++-------------------------------------------------------------------+
+
 ---
 
 *Track leads: Mirza Ašćerić (ML) · Hole (data engineering). Code under MIT (see `LICENSE`); data under `DATA_USE.md`.*
