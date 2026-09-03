@@ -1,20 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied Search Intelligence Research Paper</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayushman Saha | AI & Machine Learning Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0F172A;
+      color: #E2E8F0;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+  </style>
 </head>
-<body>
-    <div id="content">Loading paper...</div>
-    <script>
-        fetch('work/paper.md')
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('content').innerHTML = marked.parse(text);
-            });
-    </script>
+<body class="min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
+
+  <!-- Navigation -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+        <span class="font-bold text-lg tracking-tight text-white font-heading">Ayushman Saha</span>
+      </div>
+      <nav class="flex items-center space-x-6 text-sm font-medium text-slate-400">
+        <a href="#featured" class="hover:text-blue-400 transition">Capstone</a>
+        <a href="#case-studies" class="hover:text-blue-400 transition">Case Studies</a>
+        <a href="#next-up" class="hover:text-blue-400 transition">Roadmap</a>
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo" target="_blank" class="px-3 py-1.5 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-500 transition">GitHub Repo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-5xl mx-auto px-6 py-16 space-y-20">
+    <section class="space-y-6">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide uppercase">
+        <span>Verified AI Fluency Scholar</span>
+        <span>•</span>
+        <span>54 Hours Logged</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">
+        Building Autonomous Agents & Deterministic ML Pipelines.
+      </h1>
+      <p class="text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed">
+        B.Tech IT student at Institute of Engineering & Management, Kolkata. Specialized in Model Context Protocol (MCP) tool integration, DuckDB automated validation, and production-grade data contracts.
+      </p>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo" target="_blank" class="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">
+          Explore Repository
+        </a>
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo/blob/main/docs/INDEX.md" target="_blank" class="px-6 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 font-semibold hover:bg-slate-700 hover:text-white transition">
+          Master Index
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Capstone -->
+    <section id="featured" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <h2 class="text-2xl font-bold text-white font-heading">Featured Capstone Project</h2>
+        <span class="text-xs text-slate-500 font-mono">TRACK CODE: FL-09 / FL-10</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-semibold text-blue-400 tracking-wider uppercase font-mono">Autonomous Search Intelligence Agent</span>
+            <h3 class="text-3xl font-bold text-white mt-1 font-heading">Search-Intel-Scout</h3>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium">
+            ✅ Verified & Submitted
+          </span>
+        </div>
+
+        <p class="text-slate-300 leading-relaxed">
+          An autonomous agent designed for Search Intelligence and Machine Learning data validation. It connects directly to local filesystems and DuckDB databases via the Model Context Protocol (MCP), inspecting notebooks, running live duplicate key verification queries against Parquet files, and publishing peer-review-ready Data Contracts.
+        </p>
+
+        <!-- Tech Badges -->
+        <div class="flex flex-wrap gap-2 font-mono text-xs">
+          <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Python 3.10+</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">DuckDB</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Model Context Protocol (MCP)</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Google Antigravity IDE</span>
+        </div>
+
+        <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-4">
+          <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo/blob/main/README.md" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1">
+            View README & Setup Guide &rarr;
+          </a>
+          <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo/blob/main/docs/RETROSPECTIVE.md" target="_blank" class="text-sm text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-1">
+            Read Capstone Retrospective &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Beat Case Studies Grid -->
+    <section id="case-studies" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <h2 class="text-2xl font-bold text-white font-heading">3-Beat Case Studies</h2>
+        <span class="text-xs text-slate-500 font-mono">PROBLEM &rarr; ACTION &rarr; RESULT</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="case-studies-grid">
+        
+        <!-- Case Study 1 -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+          <div class="space-y-3">
+            <span class="text-xs font-mono text-blue-400">CASE STUDY 01</span>
+            <h3 class="text-xl font-bold text-white font-heading">Automated Parquet Grain & Duplicate Key Verification</h3>
+            
+            <div class="space-y-2 text-sm">
+              <p><strong class="text-red-400">1. Problem:</strong> Manual notebook inspection for Parquet dataset duplicates took hours and caused schema drift in ML pipelines.</p>
+              <p><strong class="text-blue-400">2. What I Did:</strong> Bound the agent to local DuckDB via MCP, running <code class="bg-slate-800 px-1 py-0.5 rounded text-xs">HAVING COUNT(*) > 1</code> queries over Parquet binaries.</p>
+              <p><strong class="text-emerald-400">3. Result:</strong> Automated instant verification across 100,000 rows with 0 duplicate keys and generated published Markdown Data Contracts.</p>
+            </div>
+          </div>
+          <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo/blob/main/README.md#5-evaluation-results-v2-pre-build-evals" target="_blank" class="text-xs text-blue-400 hover:underline font-mono">View Execution Artifact &rarr;</a>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+          <div class="space-y-3">
+            <span class="text-xs font-mono text-blue-400">CASE STUDY 02</span>
+            <h3 class="text-xl font-bold text-white font-heading">Read-Only SQL Safety Guardrails & Directory Isolation</h3>
+            
+            <div class="space-y-2 text-sm">
+              <p><strong class="text-red-400">1. Problem:</strong> Autonomous agents with shell permissions pose severe risk of accidental <code class="bg-slate-800 px-1 py-0.5 rounded text-xs">DROP</code> or <code class="bg-slate-800 px-1 py-0.5 rounded text-xs">DELETE</code> execution.</p>
+              <p><strong class="text-blue-400">2. What I Did:</strong> Hardcoded strict AST query filters allowing only <code class="bg-slate-800 px-1 py-0.5 rounded text-xs">SELECT</code> / <code class="bg-slate-800 px-1 py-0.5 rounded text-xs">read_parquet</code>, and locked filesystem access to <code class="bg-slate-800 px-1 py-0.5 rounded text-xs">./docs/</code>.</p>
+              <p><strong class="text-emerald-400">3. Result:</strong> Passed 100% of security evaluation tests, completely blocking secret key leaks and malicious file overwrites.</p>
+            </div>
+          </div>
+          <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo/blob/main/README.md#6-known-limitations--safety-guardrails" target="_blank" class="text-xs text-blue-400 hover:underline font-mono">View Security Matrix &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Roadmap / Next Up -->
+    <section id="next-up" class="bg-gradient-to-r from-blue-900/20 to-slate-900 border border-blue-500/20 rounded-2xl p-8 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-mono text-blue-400 uppercase tracking-widest">Plan to Keep Building</span>
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo/blob/main/docs/PLAN_TO_KEEP_BUILDING.md" target="_blank" class="text-xs text-blue-400 hover:underline font-mono">View Full Plan &rarr;</a>
+      </div>
+      <h2 class="text-2xl font-bold text-white font-heading">Next Real Piece of Work</h2>
+      <p class="text-slate-300">
+        <strong>Project Title:</strong> <code class="text-blue-300">Autonomous Multi-Source Feature Leakage & Schema Drift Inspector</code><br>
+        Extending <code class="text-blue-300">Search-Intel-Scout</code> to automatically detect feature leakage and target correlation anomalies across Parquet data batches before baseline ML model training.
+      </p>
+      <div class="flex items-center space-x-2 text-xs font-mono text-slate-400 pt-2">
+        <span>Target Completion: September 25, 2026</span>
+        <span>•</span>
+        <span>Monthly Nudge Configured in Google Calendar</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-sm text-slate-500">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 Ayushman Saha. Built for General AI Fluency Capstone.</p>
+      <div class="flex space-x-6 text-xs">
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo" target="_blank" class="hover:text-slate-300">GitHub Repo</a>
+        <a href="https://github.com/ayushmansaha1013/Fly_rank_ML_internship_repo/blob/main/docs/INDEX.md" target="_blank" class="hover:text-slate-300">Master Index</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
